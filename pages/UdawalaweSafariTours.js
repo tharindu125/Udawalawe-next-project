@@ -75,7 +75,7 @@ function SafariTours() {
                 <div className="hero-overlay">
                     <h1 className="text-center text-white fw-bold" data-aos="fade-up" data-aos-delay="200">Udawalawe Safari Tours</h1>
                     <p className="text-center text-white" data-aos="fade-up" data-aos-delay="300">
-                        Enjoy free laundry and room service with no extra fees – because your comfort is always our priority.
+                        Discover the wild beauty of Udawalawe National Park with expert guides, private jeeps, and unforgettable wildlife encounters.
                     </p>
                 </div>
             </div>
@@ -117,7 +117,7 @@ function SafariTours() {
                                         You can even see the dwarf elephant in this forest — the only one of its kind found in South Asia.
                                     </p>
                                     <Button
-                                        href="/UdawalaweSafariTours"
+                                        href="/contact#book_now"
                                         className="px-4 py-2 fw-bold text-uppercase border-0"
                                         style={{
                                             backgroundColor: '#f8aa28',
@@ -173,7 +173,7 @@ function SafariTours() {
                                     </p>
 
                                     <Button
-                                        href="/UdawalaweSafariTours"
+                                        href="/contact#book_now"
                                         className="px-4 py-2 fw-bold text-uppercase border-0 mt-3"
                                         style={{
                                             backgroundColor: '#f8aa28',
@@ -222,7 +222,7 @@ function SafariTours() {
                                     </p>
 
                                     <Button
-                                        href="/UdawalaweSafariTours"
+                                        href="/contact#book_now"
                                         className="px-4 py-2 fw-bold text-uppercase border-0 mt-3"
                                         style={{
                                             backgroundColor: '#f8aa28',
@@ -277,7 +277,7 @@ function SafariTours() {
                                     </p>
 
                                     <Button
-                                        href="/UdawalaweSafariTours"
+                                        href="/contact#book_now"
                                         className="px-4 py-2 fw-bold text-uppercase border-0 mt-3"
                                         style={{
                                             backgroundColor: '#f8aa28',

@@ -26,9 +26,6 @@ export default function Document() {
         {/* Theme Color */}
         <meta name="theme-color" content="#febf00" />
 
-        {/* Viewport */}
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-
         {/* Default robots */}
         <meta name="robots" content="index, follow" />
 

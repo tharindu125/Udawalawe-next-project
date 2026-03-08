@@ -88,7 +88,12 @@ function Contact() {
       };
     
       emailjs
-        .send('service_yfik5ye', 'template_sk997no', templateParams, 'Gm6ruTC-Zjw_QKJ3N')
+        .send(
+          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+          templateParams,
+          process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+        )
         .then(() => {
           setMessage({ type: 'success', text: 'Booking submitted successfully!' });
           setFormData({
