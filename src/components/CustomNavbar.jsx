@@ -41,7 +41,7 @@ function CustomNavbar() {
             <Link href="/Gallery" passHref legacyBehavior><Nav.Link className={`${getNavLinkClass('/Gallery')} fw-semibold`}>Gallery</Nav.Link></Link>
 
             <div className="ms-3">
-              <a href="/#book_now" className="btn text-light" style={{background: '#664d03', boxShadow: '0 0 5px'}}>Book Now</a>
+              <Link href="/#book_now" className="btn text-light" style={{background: '#664d03', boxShadow: '0 0 5px'}}>Book Now</Link>
             </div>
           </Nav>
         </Navbar.Collapse>

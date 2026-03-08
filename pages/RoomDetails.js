@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import { Carousel } from 'react-bootstrap';
 import CustomNavbar from '../src/components/CustomNavbar';
 
@@ -61,7 +62,7 @@ const RoomsSection = () => {
           <h5 className="card-title">{title}</h5>
           <p className="card-text">{description}</p>
           <p className='card-price'>{price} (Per Night)</p>
-          <a href="/contact#book_now" className="btn btn-primary" style={{background:'#664d03', border:'none'}}>Book Now</a>
+          <Link href="/contact#book_now" className="btn btn-primary" style={{background:'#664d03', border:'none'}}>Book Now</Link>
         </div>
         <div className='col-md-6'>
             <Carousel
