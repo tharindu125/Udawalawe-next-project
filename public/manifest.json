@@ -1,0 +1,21 @@
+{
+  "name": "Udawalawe Elegarden Safari Resort",
+  "short_name": "Elegarden Resort",
+  "description": "Luxury hotel and safari tours in Udawalawe, Sri Lanka",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#febf00",
+  "icons": [
+    {
+      "src": "/logo.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/logo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}

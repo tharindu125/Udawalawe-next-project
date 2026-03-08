@@ -1,0 +1,671 @@
+#root {
+  /* max-width: 1280px; */
+  margin: 0 auto;
+  /* padding: 2rem; */
+  /* text-align: center; */
+}
+
+body {
+  overflow-x: hidden;
+}
+
+img {
+  object-fit: cover;
+  -webkit-transform: translateZ(0); /* fixes some render bugs in Safari */
+}
+
+.manual_text_center {
+  text-align: center;
+}
+
+.manual_text_left {
+  text-align: left;
+}
+
+.text_shadow_black {
+  text-shadow: 0 0 2px #0000003e;
+}
+
+.text_shadow_white {
+  text-shadow: 0 0 2px #ffffff3e;
+}
+
+.btn_color {
+  background: #664d03;
+  /* color: #fff; */
+  box-shadow: 0 0 5px rgba(102, 77, 3, 0.5);
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.text-shadow {
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+.accordion-collapse {
+  transition: height 1s ease !important; /* Adjust duration and easing as needed */
+}
+
+.home_page_main_card .main_img img {
+  height: 500px;
+  object-fit: cover;
+  cursor: pointer;
+  max-width: 100%;
+  display: block;
+}
+
+.home_page_main_card .sub_img img {
+  height: 200px;
+  object-fit: cover;
+  cursor: pointer;
+  max-width: 100%;
+  display: block;
+}
+
+@media (max-width:450px) {
+  .home_page_main_card .main_img img {
+    height: 300px;
+    object-fit: cover;
+    cursor: pointer;
+    max-width: 100%;
+    display: block;
+  }
+
+  .home_page_main_card .sub_img img {
+    height: 120px;
+    object-fit: cover;
+    cursor: pointer;
+    max-width: 100%;
+    display: block;
+  }
+}
+
+/* Main carousel */
+.fullscreen-image {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+  display: block;
+  overflow: hidden;
+  object-position: center;
+}
+
+.custom-navbar {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  backdrop-filter: blur(5px);
+}
+
+.navbar-brand span {
+  font-size: 22px;
+}
+
+@media (max-width:1024px) {
+  .navbar-brand span {
+    font-size: 20px;
+  }
+
+  .nav-link {
+    font-size: 13px !important;
+    padding-right: 0 !important;
+  }
+
+  #navbar-nav .btn {
+    font-size: 13px;
+  }
+}
+
+@media (max-width:768px) {
+  .navbar-brand span {
+    font-size: 20px;
+  }
+}
+
+@media (max-width:450px) {
+  .navbar-brand span {
+    font-size: 16px;
+  }
+}
+
+@media (max-width:400px) {
+  .navbar-brand span {
+    font-size: 12px;
+  }
+}
+
+/* Sub Carousel */
+.fullscreen-image-sub {
+  height: 60vh;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 992px) {
+  .fullscreen-image {
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.carousel-caption {
+  bottom: 5%;
+  top: 15%;
+  padding: 3rem;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  flex-direction: column;
+  margin-top: 5rem;
+}
+
+@media (max-width: 550px) {
+  .carousel-caption {
+    bottom: 5%;
+    top: 10%;
+    left: 5% !important;
+    right: 5% !important;
+    padding: 1.5rem;
+    text-align: center;
+    margin-top: 5rem;
+  }
+
+  .carousel-caption h2 {
+    font-size: 32px !important;
+    padding-bottom: 15px;
+    line-height: 45px;
+  }
+  
+}
+
+/* Styling for welcome and content sections */
+.welcome h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 0px 0px 8px rgb(255, 191, 0);
+}
+
+.welcome p {
+  font-size: 1.1rem;
+  text-shadow: 0px 0px 4px rgb(0, 0, 0);
+}
+
+/* .why-box, .icon-box {
+  background: rgba(0, 0, 0, 0.561);
+  border-radius: 10px;
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(255, 238, 0, 0.185);
+}
+
+.icon-box i,
+.icon-box svg {
+  color: #ffc107;
+  font-size: 2rem;
+}
+
+.more-btn {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+} */
+
+.more-btn:hover {
+  text-decoration: underline;
+}
+
+
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .welcome h2 {
+    font-size: 1.8rem;
+  }
+
+  .welcome p {
+    font-size: 0.95rem;
+  }
+
+  .icon-box i,
+  .icon-box svg {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .carousel-caption {
+    padding: 1.5rem;
+  }
+
+  .welcome h2 {
+    font-size: 1.5rem;
+  }
+
+  .welcome p {
+    font-size: 0.9rem;
+  }
+
+  .why-box, .icon-box {
+    padding: 15px;
+  }
+
+  .main-topic .image {
+    order: 0;
+    margin-bottom: 15px;
+  }
+
+  .main-topic .content {
+    order: 1;
+  }
+
+}
+
+@media (max-width: 576px) {
+  .welcome h2 {
+    font-size: 23px;
+  }
+
+  .welcome p {
+    font-size: 0.85rem;
+  }
+
+  .carousel-caption {
+    padding: 1rem;
+  }
+
+  .icon-box {
+    font-size: 0.9rem;
+  }
+
+  .card_body {
+    padding: 0 !important;
+  }
+}
+
+/* image Slider */
+.hero-slider-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.hero-swiper .swiper-slide {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.4;
+  scale: 0.9;
+}
+
+.hero-swiper .swiper-slide-active {
+  opacity: 1;
+  scale: 1.1;
+  z-index: 10;
+}
+
+.slider-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* Near Place */
+.near_places .price {
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: rgba(78, 60, 1, 0.812);
+  text-shadow: 2px 2px 4px rgba(255, 213, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.185);
+  border: 1px solid hsla(0, 0%, 100%, 0.62);
+}
+
+.near_places .card {
+  padding: 10px;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+h1 {
+  margin-bottom: 40px;
+  font-size: 3rem;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Contact Page */
+.map-container {
+  margin-bottom: 30px;
+}
+
+.contact-details .contact-card {
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info {
+  margin-bottom: 15px;
+}
+
+.contact-info h5 {
+  font-weight: bold;
+}
+
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-icons Button {
+  margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 20px;
+  }
+
+  .contact-details .contact-card {
+    margin-top: 20px;
+  }
+
+  .contact-info .mobile_no {
+    gap: 8px !important;
+  }
+}
+
+/* Gallery */
+.gallery-section {
+  margin-top: 5rem;
+}
+
+.gallery-section .filter-btn {
+  border: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.gallery-section .filter-btn.active {
+  background-color: var(--bs-warning-text-emphasis);
+  color: white;
+}
+
+.gallery-section .filter-btn:hover {
+  transform: scale(1.1);
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.gallery-section .filter-btn.active:hover {
+  background-color: rgb(156, 118, 4);
+  color: white;
+}
+
+.my-masonry-grid {
+  display: flex;
+  margin-left: -16px;
+  width: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 16px;
+  background-clip: padding-box;
+}
+.gallery-img-wrapper {
+  margin-bottom: 16px;
+}
+.gallery-img-wrapper img {
+  width: 100%;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+.gallery-img-wrapper img:hover {
+  transform: scale(1.03);
+}
+
+.gallery .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.gallery .modal-content {
+  position: relative;
+  max-width: 50%;
+  max-height: 80%;
+}
+
+.gallery .modal-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 20px #000;
+}
+
+.gallery .modal-close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #fff;
+  color: #000;
+  border: none;
+  font-size: 20px;
+  padding: 0px 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .gallery .modal-content {
+    position: relative;
+    max-width: 80%;
+    max-height: 80%;
+  }
+}
+
+/* About */
+.about-hero-section {
+  position: relative;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+h1, p {
+  margin: 0;
+}
+
+.about-content {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.cta-section {
+  background-color: #f8f9fa;
+  padding: 30px 0;
+  margin-top: 50px;
+  border-radius: 8px;
+}
+
+.cta-section h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.cta-section p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
+.hero-overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.hover-effect:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.481);
+}
+
+@media (max-width: 576px) {
+  .hover-effect {
+    padding-bottom: 80px;
+  }
+}
+
+/* Reastaurent */
+.restaurent_image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Safari Tours */
+.safari_tours-hero {
+  height: 100vh;
+  width: 100%;
+}
+
+.safari_tours-hero h1 {
+  font-size: 50px;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.771);
+}
+
+.safari_tours-hero p {
+  font-size: 20px;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.771);
+}
+
+.safari_tours-packeges img{
+  height: 500px;
+}
+
+.safari_tours-packeges h2{
+  font-size: 2.5rem;
+}
+
+.packege_details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #febf0069 !important;
+  color: #000 !important;
+  box-shadow: none !important;
+  font-size: 20px !important;
+}
+
+@media (max-width:768px) {
+  .safari_tours-hero {
+    height: 50vh;
+    width: 100%;
+  }
+
+  .safari_tours-hero h1 {
+    font-size: 30px;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.771);
+  }
+
+  .safari_tours-hero p {
+    font-size: 18px;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.771);
+  }
+
+  .safari_tours-packeges img{
+    height: 200px;
+  }
+
+  .safari_tours-packeges h2{
+    font-size: 30px;
+  }
+}
+
+/* Footer */
+.footer {
+ text-align: left;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    text-align: center;
+  }
+}

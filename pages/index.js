@@ -1,0 +1,793 @@
+import Head from 'next/head';
+import Link from 'next/link';
+import CustomNavbar from '../src/components/CustomNavbar';
+import MainCarousel from '../src/components/MainCarousel';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import { useState } from 'react';
+import DatePicker from 'react-datepicker';
+import Select from 'react-select';
+import 'react-datepicker/dist/react-datepicker.css';
+import emailjs from 'emailjs-com';
+import { Modal } from 'react-bootstrap';
+import { FaSearchPlus } from 'react-icons/fa';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/autoplay';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, EffectCoverflow } from 'swiper/modules';
+
+// import welcomeImage from '../src/assets/slider2.jpg';
+import nearPlace1 from '../src/assets/slider1.jpg';
+import nearPlace2 from '../src/assets/Maduwanwela-Walawwa.jpg';
+import nearPlace3 from '../src/assets/Sankapala.jpg';
+import nearPlace4 from '../src/assets/elephant_transit.webp';
+import nearPlace5 from '../src/assets/wavulpone.webp';
+import nearPlace6 from '../src/assets/katupila_wewa.jpg';
+import nearPlace7 from '../src/assets/Udawalawa_Dam.jpg';
+import roomsImage01 from '../src/assets/Udawalava-Eligarden-Hotel-rooms.jpg';
+import roomsImage02 from '../src/assets/Udawalava-Eligarden-Hotel-Gallery-Image02.jpg';
+import roomsImage03 from '../src/assets/Udawalava-Eligarden-Hotel-Gallery-Image01.jpg';
+import restaurantimage01 from '../src/assets/Udawalava-Eligarden-Hotel-Gallery-Image05.jpg';
+import restaurantimage02 from '../src/assets/Udawalava-Eligarden-Hotel-Gallery-Image04.jpg';
+import restaurantimage03 from '../src/assets/Udawalava-Eligarden-Hotel-Gallery-Image10.jpg';
+import safariImage01 from '../src/assets/Udawalava-Eligarden-Hotel-Safari-Gallery-Image60.jpg';
+import safariImage02 from '../src/assets/Udawalava-Eligarden-Hotel-Safari-Gallery-Image55.jpg';
+import safariImage03 from '../src/assets/Udawalava-Eligarden-Hotel-Safari-Gallery-Image28.jpg';
+
+import img1 from '../src/assets/Udawalava-Eligarden-Hotel-Gallery-Image01.jpg';
+import img2 from '../src/assets/Udawalava-Eligarden-Hotel-Gallery-Image02.jpg';
+import img3 from '../src/assets/Udawalava-Eligarden-Hotel-Safari-Gallery-Image03.jpg';
+import img4 from '../src/assets/Udawalava-Eligarden-Hotel-Gallery-Image04.jpg';
+import img5 from '../src/assets/Udawalava-Eligarden-Hotel-Gallery-Image05.jpg';
+import img6 from '../src/assets/Udawalava-Eligarden-Hotel-Safari-Gallery-Image06.jpg';
+import img7 from '../src/assets/Udawalava-Eligarden-Hotel-Gallery-Image07.jpg';
+import img8 from '../src/assets/Udawalava-Eligarden-Hotel-Gallery-Image08.jpg';
+import img9 from '../src/assets/Udawalava-Eligarden-Hotel-Safari-Gallery-Image09.jpg';
+import img10 from '../src/assets/Udawalava-Eligarden-Hotel-Gallery-Image10.jpg';
+
+const imageList = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10];
+
+
+function Home() {
+  const nearbyAttractions = [
+    {
+      title: 'Udawalawa National Park',
+      distance: '2.3 km',
+      description: 'Experience the rich biodiversity and stunning landscapes of this national park.',
+      image: nearPlace1,
+      fade: '200',
+    },
+    {
+      title: 'Maduwanwela Walawwa',
+      distance: '43 km',
+      description: 'Explore the historic mansion with colonial architecture and rich history.',
+      image: nearPlace2,
+      fade: '300',
+    },
+    {
+      title: 'Katupila Wewa',
+      distance: '8.5 km',
+      description: 'A scenic waterfall surrounded by lush forest — perfect for a short trek.',
+      image: nearPlace6,
+      fade: '400',
+    },
+    {
+      title: 'Sankhapala Ancient Historical Temple',
+      distance: '15 km',
+      description: 'An ancient Buddhist temple nestled in the hills with beautiful views.',
+      image: nearPlace3,
+      fade: '500',
+    },
+    {
+      title: 'Elephant Transit Home',
+      distance: '6.6 km',
+      description: 'See baby elephants being rehabilitated before they return to the wild.',
+      image: nearPlace4,
+      fade: '600',
+    },
+    {
+      title: 'Wawulpane Limestone Cave',
+      distance: '21 km',
+      description: 'A prehistoric limestone cave with a flowing stream and bat colonies.',
+      image: nearPlace5 ,
+      fade: '700',
+    },
+    {
+      title: 'Udawalawa Dam',
+      distance: '5 km',
+      description: 'The Udawalawe Dam is a large irrigation dam in Udawalawe, in the Southern Province of Sri Lanka.',
+      image: nearPlace7 ,
+      fade: '800',
+    }
+  ];  
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    country: '',
+    checkIn: null,
+    checkOut: null,
+    restaurantNote: '',
+    packages: [],
+    safaripackages: [],
+    tourDate: null,
+    specialRequests: '',
+  });
+
+  // Removed unused errors state
+
+  const packageOptions = [
+    { value: 'Single Room', label: 'Single Room' },
+    { value: 'Double Room', label: 'Double Room' },
+    { value: 'Triple Room', label: 'Triple Room' },
+  ];
+
+  const SafaripackageOptions = [
+    { value: 'Normal Safari Tour', label: 'Normal Safari Tour - 3Hr' },
+    { value: 'Half Day Safari Tour', label: 'Half Day Safari Tour - 6Hr' },
+    { value: 'Full Day Safari Tour', label: 'Full Day Safari Tour - 12Hr' },
+  ];
+  
+  const [selectedServices, setSelectedServices] = useState({
+    accommodation: true,
+    restaurant: false,
+    safari: false,
+  });
+
+  const toggleService = (service) => {
+    setSelectedServices(prev => ({
+      ...prev,
+      [service]: !prev[service]
+    }));
+  };
+
+  const validate = () => {
+    let temp = {};
+    temp.name = formData.name ? '' : 'Name is required';
+    temp.email = /\S+@\S+\.\S+/.test(formData.email) ? '' : 'Valid email is required';
+    temp.phone = formData.phone ? '' : 'Mobile number is required';
+    temp.country = formData.country ? '' : 'Country is required';
+    temp.checkIn = formData.checkIn ? '' : 'Check-in date is required';
+    // Validation logic remains without setting errors
+    return Object.values(temp).every(x => x === '');
+  };
+
+  const [message, setMessage] = useState({ type: '', text: '' });
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!validate()) return;
+
+    setLoading(true); // show loading
+    setMessage({ type: '', text: '' }); // reset message
+  
+    const templateParams = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      country: formData.country,
+      checkin: formData.checkIn?.toLocaleDateString(),
+      checkout: formData.checkOut?.toLocaleDateString(),
+      tourDate: formData.tourDate?.toLocaleDateString(),
+      restaurantNote: formData.restaurantNote,
+      packages: formData.packages.map(p => p.label).join(', '),
+      safaripackages: formData.safaripackages.map(p => p.label).join(', '),
+      specialRequests: formData.specialRequests || 'None',
+    };
+  
+    emailjs
+      .send('service_yfik5ye', 'template_sk997no', templateParams, 'Gm6ruTC-Zjw_QKJ3N')
+      .then(() => {
+        setMessage({ type: 'success', text: 'Booking submitted successfully!' });
+        setFormData({
+          name: '', email: '', phone: '', country: '', checkIn: null, checkOut: null, restaurantNote: '', packages: [],
+          tourDate: null, safaripackages: [], specialRequests: '',
+        });
+        setTimeout(() => {
+          setMessage({ type: '', text: '' });
+        }, 3000);
+        // Clear any potential error states
+      })
+      .catch((error) => {
+        console.error('Email sending failed:', error);
+        setMessage({ type: 'error', text: 'Failed to send email. Please try again later.' });
+      })
+      .finally(() => {
+        setLoading(false); // hide loading after response
+      });
+  };
+
+  const [showModal, setShowModal] = useState(false);
+  const [modalImage, setModalImage] = useState(null);
+
+  const handleOpen = (image) => {
+    setModalImage(image);
+    setShowModal(true);
+  };
+
+  const handleClose = () => {
+    setShowModal(false);
+    setModalImage(null);
+  };
+
+  return (
+    <>
+      <Head>
+        <title>Udawalawe Elegarden Safari Resort | Luxury Hotel & Safari Tours in Sri Lanka</title>
+        <meta name="description" content="Udawalawe Elegarden Safari Resort - Your perfect getaway in Udawalawa, Sri Lanka. Experience luxury, comfort, and nature." />
+        <meta name="keywords" content="Udawalawe hotel, Udawalawa safari resort, luxury accommodation Udawalawe, Sri Lanka safari tours, Udawalawe National Park hotels, nature retreat Sri Lanka, wildlife safari Sri Lanka, Safari tours in Sri Lanka, Sri Lanka wildlife safari, Udawalawe safari tour, Elephant safari Sri Lanka, Sri Lanka jeep safari, Safari packages Sri Lanka, Private safari tours Sri Lanka, Wildlife holidays in Sri Lanka, Udawalawe safari" />
+        <meta name="author" content="Udawalawe Elegarden Safari Resort" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:title" content="Udawalawe Elegarden Safari Resort" />
+        <meta property="og:description" content="Udawalawe Elegarden Safari Resort - Your perfect getaway in Udawalawa, Sri Lanka. Experience luxury, comfort, and nature." />
+        <meta property="og:image" content="https://udawalaweelegardenhotelandsafari.com/logo.jpg" />
+        <meta property="og:url" content="https://udawalaweelegardenhotelandsafari.com/" />
+        <meta property="og:type" content="website" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Udawalawe Elegarden Safari Resort" />
+        <meta name="twitter:description" content="Udawalawe Elegarden Safari Resort - Your perfect getaway in Udawalawa, Sri Lanka. Experience luxury, comfort, and nature." />
+        <meta name="twitter:image" content="https://udawalaweelegardenhotelandsafari.com/logo.jpg" />
+        
+        <link rel="canonical" href="https://udawalaweelegardenhotelandsafari.com" />
+        
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LodgingBusiness",
+            "name": "Udawalawe Elegarden Safari Resort",
+            "image": "https://udawalaweelegardenhotelandsafari.com/logo.jpg",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Udawalawe",
+              "addressCountry": "Sri Lanka",
+              "postalCode": "70190"
+            },
+            "url": "https://udawalaweelegardenhotelandsafari.com/",
+            "telephone": "+94 76 560 3802",
+            "priceRange": "$$"
+          })}
+        </script>
+      </Head>
+      
+      <main itemScope itemType="https://schema.org/LodgingBusiness">
+        <meta itemProp="name" content="Udawalawe Elegarden Safari Resort" />
+        <meta itemProp="image" content="/src/assets/logo.jpg" />
+        <meta itemProp="address" content="Udawalawe, Sri Lanka" />
+        <meta itemProp="telephone" content="+94 76 560 3802" />
+        <meta itemProp="priceRange" content="$$" />
+        <meta itemProp="url" content="https://udawalaweelegardenhotelandsafari.com/" />
+
+        <CustomNavbar />
+        <section aria-label="Main hotel showcase" role="region">
+          <div style={{width: '100vw'}}>
+            <MainCarousel aria-label="Hotel photo gallery" />
+          </div>
+        </section>
+
+      {/* Guest House */}
+      <section className='container py-5 main-topic home_page_main_card' itemScope itemType="https://schema.org/Hotel">
+        <div className='row align-items-center'>
+          {/* Text Content */}
+          <div className='col-md-5 mb-4 mb-md-0 manual_text_left content'>
+            <h1 className='h3 fw-bold mb-3 text-warning-emphasis' data-aos="flip-up" data-aos-delay="200" itemProp="name">Room Features & Amenities</h1>
+            <meta itemProp="description" content="Luxury accommodations at Udawalawe Elegarden Hotel with modern amenities and nature views" />
+            <p className='text-muted mb-3 index-paragraph' data-aos="flip-up" data-aos-delay="300" role="paragraph">
+              At Udawalawa Elegarden Hotel, we offer a peaceful stay with nature just outside your window. Whether you're traveling alone, as a couple, or with 
+              family, our Single, Double, and Triple rooms are designed to match your needs with comfort and privacy.
+            </p>
+            <p className='text-muted' data-aos="flip-up" data-aos-delay="400">
+              All rooms include air conditioning or fan, attached bathroom with hot water, free Wi-Fi, outdoor sitting space, and a designated smoking area. You’ll also 
+              find soap, towels, fresh bedding, and a hair dryer ready in your room.
+            </p>
+            <p data-aos="flip-up" data-aos-delay="500">
+              Enjoy free laundry and room service with no extra fees – because your comfort is always our priority.
+            </p>
+            <Link href="/RoomDetails" className="btn text-light" style={{background: '#664d03', boxShadow: '0 0 5px'}} data-aos="flip-up" data-aos-delay="600" aria-label="Learn more about room details">
+              More Details
+            </Link>
+          </div>
+
+          {/* Image */}
+          <div className="col-md-7 mb-3">
+            <div className="row g-2">
+              {/* Left Large Image */}
+              <div className="col-6 main_img" data-aos="fade-down" data-aos-delay="200">
+                <img
+                  src={roomsImage01.src}
+                  alt="Luxury room at Udawalawe Elegarden Hotel with comfortable bedding and modern amenities"
+                  className="img-fluid rounded shadow"
+                  onClick={() => handleOpen(roomsImage01)}
+                  loading="lazy"
+                />
+              </div>
+
+              {/* Right Two Small Images */}
+              <div className="col-6 d-flex flex-column justify-content-between sub_img" data-aos="fade-up" data-aos-delay="200">
+                <img
+                  src={roomsImage02.src}
+                  alt="Spacious bathroom with modern fixtures at Udawalawe Elegarden Hotel"
+                  className="img-fluid rounded shadow mb-2"
+                  style={{marginTop:'2rem'}}
+                  onClick={() => handleOpen(roomsImage02)}
+                  loading="lazy"
+                />
+                <img
+                  src={roomsImage03.src}
+                  alt="Scenic balcony view from Udawalawe Elegarden Hotel room overlooking nature"
+                  className="img-fluid rounded shadow"
+                  style={{marginBottom:'2rem'}}
+                  onClick={() => handleOpen(roomsImage03)}
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* Restaurant */}
+      <section className='container py-5 main-topic home_page_main_card' itemScope itemType="https://schema.org/FoodEstablishment">
+        <div className='row align-items-center'>
+          {/* Image */}
+          <div className="col-md-7 mb-3">
+            <div className="row g-2">
+              {/* Left Large Image */}
+              <div className="col-6 main_img" data-aos="fade-down" data-aos-delay="200">
+                <img
+                  src={restaurantimage01.src}
+                  alt="Elegant dining area at Udawalawe Elegarden Hotel restaurant"
+                  className="img-fluid rounded shadow"
+                  onClick={() => handleOpen(restaurantimage01)}
+                  loading="lazy"
+                />
+              </div>
+
+              {/* Right Two Small Images */}
+              <div className="col-6 d-flex flex-column justify-content-between sub_img" data-aos="fade-up" data-aos-delay="200">
+                <img
+                  src={restaurantimage02.src}
+                  alt="Traditional Sri Lankan cuisine served at Udawalawe Elegarden Hotel"
+                  className="img-fluid rounded shadow mb-2"
+                  style={{marginTop:'2rem'}}
+                  onClick={() => handleOpen(restaurantimage02)}
+                  loading="lazy"
+                />
+                <img
+                  src={restaurantimage03.src}
+                  alt="Fresh seafood dishes at Udawalawe Elegarden Hotel restaurant"
+                  className="img-fluid rounded shadow"
+                  style={{marginBottom:'2rem'}}
+                  onClick={() => handleOpen(restaurantimage03)}
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Text Content */}
+          <div className='col-md-5 mb-4 mb-md-0 manual_text_left content'>
+            <h2 className='h3 fw-bold mb-3 text-warning-emphasis' data-aos="flip-up" data-aos-delay="200" itemProp="name">Delicious Local & International Restaurant</h2>
+            <meta itemProp="servesCuisine" content="Sri Lankan, International" />
+            <p className='text-muted mb-3' data-aos="flip-up" data-aos-delay="300">
+              Start your day with a hearty breakfast, relax with a satisfying lunch, or unwind with a flavorful dinner — all freshly prepared by our 
+              skilled chefs using local ingredients. Whether you prefer to dine in and enjoy the serene atmosphere or grab a quick takeaway, we cater to your needs.
+            </p>
+            <p className='text-muted' data-aos="flip-up" data-aos-delay="400">
+              Our menu brings together the best of both worlds — from authentic Sri Lankan dishes to popular international favorites, there's something to please every palate.
+            </p>
+            <p className='text-muted' data-aos="flip-up" data-aos-delay="500">
+              Looking for something cool and sweet? Treat yourself to a selection of ice creams and refreshing beverages, perfect for a hot Udawalawa afternoon.
+            </p>
+            <Link href="/Restaurant" className="btn text-light" style={{background: '#664d03', boxShadow: '0 0 5px'}} data-aos="flip-up" data-aos-delay="600" aria-label="View restaurant menu and details">
+              More Details
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Wild Life & Safari Tours */}
+      <section className='container py-5 main-topic home_page_main_card' itemScope itemType="https://schema.org/TouristAttraction">
+        <div className='row align-items-center'>
+          {/* Text Content */}
+          <div className='col-md-5 mb-4 mb-md-0 manual_text_left content'>
+            <h2 className='h3 fw-bold mb-3 text-warning-emphasis' data-aos="flip-up" data-aos-delay="200" itemProp="name">Wildlife Adventures: Udawalawe Safari Tours</h2>
+            <meta itemProp="description" content="Experience guided safari tours in Udawalawe National Park with expert guides" />
+            <p className='text-muted mb-3' data-aos="flip-up" data-aos-delay="200">
+              Embark on an unforgettable journey with our Udawalawe Safari Tours the perfect way to experience Sri Lanka’s wild beauty. Home to a thriving population 
+              of Asian elephants.
+            </p>
+            <p className='text-muted' data-aos="flip-up" data-aos-delay="300">
+              Spanning over 30,821 hectares, the park lies at the intersection of the dry and wet zones, stretching across both Uva and Sabaragamuwa provinces. 
+              This diverse ecosystem makes it a haven for a wide variety of wildlife and plant life.
+            </p>
+            <p className='text-muted' data-aos="flip-up" data-aos-delay="400">
+              In addition to elephants, the park is home to a rich array of birds, reptiles, amphibians, mammals, and fish. You may even spot rare creatures like wild cats, 
+              and during certain seasons, migratory birds add extra color to the landscape.
+            </p>
+            <p className='text-muted' data-aos="flip-up" data-aos-delay="500">
+              One unique feature of this park is the presence of Sri Lanka’s only known dwarf elephant, an extremely rare and fascinating species found nowhere else in South Asia.
+            </p>
+            <Link href="/SafariTours" className="btn text-light" style={{background: '#664d03', boxShadow: '0 0 5px'}} data-aos="flip-up" data-aos-delay="600" aria-label="Explore safari tour packages">
+              More Details
+            </Link>
+          </div>
+
+          {/* Image */}
+          <div className="col-md-7 mb-3">
+            <div className="row g-2">
+              {/* Left Large Image */}
+              <div className="col-6 main_img" data-aos="fade-down" data-aos-delay="200">
+                <img
+                  src={safariImage01.src}
+                  alt="Jeep safari tour in Udawalawe National Park with wild elephants"
+                  className="img-fluid rounded shadow"
+                  onClick={() => handleOpen(safariImage01)}
+                  loading="lazy"
+                />
+              </div>
+
+              {/* Right Two Small Images */}
+              <div className="col-6 d-flex flex-column justify-content-between sub_img" data-aos="fade-up" data-aos-delay="200">
+                <img
+                  src={safariImage02.src}
+                  alt="Close-up of wild elephant during Udawalawe safari tour"
+                  className="img-fluid rounded shadow mb-2"
+                  style={{marginTop:'2rem'}}
+                  onClick={() => handleOpen(safariImage02)}
+                  loading="lazy"
+                />
+                <img
+                  src={safariImage03.src}
+                  alt="Group of safari jeeps observing wildlife in Udawalawe National Park"
+                  className="img-fluid rounded shadow"
+                  style={{marginBottom:'2rem'}}
+                  onClick={() => handleOpen(safariImage03)}
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Modal show={showModal} onHide={handleClose} centered size="lg">
+        <Modal.Header closeButton>
+          {/* <Modal.Title>Full Image</Modal.Title> */}
+        </Modal.Header>
+        <Modal.Body>
+          {modalImage && <img src={modalImage.src} alt="Full Size" className="img-fluid w-100" />}
+        </Modal.Body>
+      </Modal>
+
+      {/* Image Slider */}
+      <section className='container py-5 my-4 pt-5 hero-slider-container' 
+        style={{boxShadow: '0 0 8px rgba(0, 0, 0, 0.2)', background: 'rgb(239, 239, 239)', width: '100vw'}} data-aos="zoom-in" data-aos-delay= "200">
+          <Swiper
+            modules={[Autoplay, EffectCoverflow]}
+            effect="coverflow"
+            centeredSlides={true}
+            loop={true}
+            spaceBetween={5}
+            coverflowEffect={{
+              rotate: 0,
+              stretch: 0,
+              depth: 100,
+              modifier: 2.5,
+            }}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            breakpoints={{
+              0: { slidesPerView: 1 },
+              576: { slidesPerView: 1.2 },
+              768: { slidesPerView: 2 },
+              992: { slidesPerView: 2 },
+            }}
+            className="hero-swiper"
+          >
+            {imageList.map((img, index) => (
+              <SwiperSlide key={index}>
+                <img
+                  src={img.src}
+                  alt={`Hotel gallery image ${index} showing accommodations, dining, and safari experiences at Udawalawe Elegarden Hotel`}
+                  className="slider-img"
+                  data-aos="zoom-in"
+                  data-aos-delay="200"
+                  loading="lazy"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+      </section>
+          
+      {/* Near Places */}
+      <section className='container py-5 my-4 near_places'>
+        <div className='container manual_text_center'>
+          <h2 className='h3 fw-bold mb-3 text-warning-emphasis' data-aos="zoom-in" data-aos-delay="200" id="nearby-attractions">Explore Nearby Attractions</h2>
+          <p className='text-muted mb-3' data-aos="flip-up" data-aos-delay="300">
+            Discover the beauty of Udawalawa and its surroundings. From stunning waterfalls to ancient temples, there's so much to explore.
+          </p>
+          <div className='row'>
+            {nearbyAttractions.map((item, index) => (
+              <div className='col-md-4 mb-4' key={index} data-aos="fade-up" data-aos-delay={item.fade}>
+                <div className='card h-100 shadow-sm position-relative overflow-hidden'>
+                  <div className="position-absolute top-5 start-5 m-2 text-white px-2 py-1 rounded price">
+                    <i className="bi bi-geo-alt-fill"></i> {item.distance}
+                  </div>
+                  <img
+                    src={item.image.src}
+                    className='card-img-top'
+                    alt={`${item.title} - ${item.description}`}
+                    loading="lazy"
+                  />
+                  <div className='card-body'>
+                    <h5 className='card-title fw-bold text-primary-emphasis'>{item.title}</h5>
+                    <p className='card-text'>{item.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Book Now */}
+      <section className='container py-5 my-4 bg-light' id='book_now' itemScope itemType="https://schema.org/BookAction" style={{ boxShadow: '0 0px 8px rgba(0, 0, 0, 0.2)' }}>
+        <div className='manual_text_center'>
+          <h2 className='h3 fw-bold mb-3 text-warning-emphasis' data-aos="zoom-in" data-aos-delay="200">Ready to Book Your Package</h2>
+          <p className='text-muted mb-4 mx-3' data-aos="flip-up" data-aos-delay="300">
+            <span itemProp="description">Experience the beauty of Udawalawa with us. Book your stay today and enjoy exclusive offers.</span>
+          </p>
+        </div>
+
+        <form className='row g-3 mx-3' onSubmit={handleSubmit}>
+
+          {/* Shared Basic Info Fields */}
+          <div className='col-md-6'>
+            <label className='form-label'>Name *</label>
+            <input type='text' className='form-control' value={formData.name}
+              onChange={e => setFormData({ ...formData, name: e.target.value })} placeholder='e.g. John Due' required />
+          </div>
+          <div className='col-md-6'>
+            <label className='form-label'>Email Address *</label>
+            <input type='email' className='form-control' value={formData.email}
+              onChange={e => setFormData({ ...formData, email: e.target.value })} placeholder='e.g. johndue@gmail.com' required />
+          </div>
+          <div className='col-md-6'>
+            <label className='form-label'>Mobile Number *</label>
+            <input type='text' className='form-control' value={formData.phone}
+              onChange={e => setFormData({ ...formData, phone: e.target.value })} placeholder='e.g. +94712345678' required />
+          </div>
+
+          <div className='col-md-6'>
+            <label className='form-label'>Country *</label>
+            <input type='text' className='form-control' value={formData.country}
+              onChange={e => setFormData({ ...formData, country: e.target.value })} placeholder='e.g. Sri Lanka' required />
+          </div>
+          
+          {/* Service Selectors */}
+          <div className='col-12'>
+            <label className='form-label fw-bold mx-3 mt-3 ms-0 fs-5'>Select Services</label>
+            <div className='form-check form-check-inline'>
+              <input
+                className='form-check-input'
+                type='checkbox'
+                id='accommodation'
+                checked={selectedServices.accommodation}
+                onChange={() => toggleService('accommodation')}
+              />
+              <label className='form-check-label' htmlFor='accommodation  fs-5'>Accommodation</label>
+            </div>
+            <div className='form-check form-check-inline'>
+              <input
+                className='form-check-input'
+                type='checkbox'
+                id='restaurant'
+                checked={selectedServices.restaurant}
+                onChange={() => toggleService('restaurant')}
+              />
+              <label className='form-check-label' htmlFor='restaurant  fs-5'>Restaurant</label>
+            </div>
+            <div className='form-check form-check-inline'>
+              <input
+                className='form-check-input'
+                type='checkbox'
+                id='safari'
+                checked={selectedServices.safari}
+                onChange={() => toggleService('safari')}
+              />
+              <label className='form-check-label' htmlFor='safari  fs-5'>Udawalawa Safari Tours</label>
+            </div>
+          </div>
+
+          {/* ✅ Accommodation Fields */}
+          {selectedServices.accommodation && (
+            <div className='row'>
+              <label className='form-label fw-bold mx-3 mt-3 ms-0 mb-0 text-warning'>Accommodation</label>
+              <div className='col-md-6'>
+                <label className='form-label'>Select Packages *</label>
+                <Select
+                  isMulti
+                  options={packageOptions}
+                  value={formData.packages}
+                  onChange={selectedOptions => setFormData({ ...formData, packages: selectedOptions })}
+                  className='basic-multi-select'
+                  classNamePrefix='select'
+                  required
+                  styles={{
+                    menu: (provided) => ({ ...provided, zIndex: 9999 })
+                  }}
+                />
+              </div>
+
+              <div className='col-md-3'>
+                <label className='form-label'>Check In Date *</label>
+                <DatePicker
+                  selected={formData.checkIn}
+                  onChange={date => setFormData({ ...formData, checkIn: date })}
+                  className='form-control'
+                  placeholderText='Select date'
+                  minDate={new Date()}
+                  required
+                />
+              </div>
+
+              <div className='col-md-3'>
+                <label className='form-label'>Check Out Date</label>
+                <DatePicker
+                  selected={formData.checkOut}
+                  onChange={date => setFormData({ ...formData, checkOut: date })}
+                  className='form-control'
+                  placeholderText='Select date'
+                  minDate={formData.checkIn}
+                  disabled={!formData.checkIn}
+                />
+              </div>
+            </div>
+          )}
+
+          {/* ✅ Restaurant Fields */}
+          {selectedServices.restaurant && (
+            <div className='row'>
+              <label className='form-label fw-bold mx-3 mt-3 ms-0 mb-0 text-warning'>Restaurant</label>
+              <div className='col-md-12'>
+                <label className='form-label'>Restaurant Booking Details</label>
+                <textarea className='form-control' rows='2' placeholder='e.g. Lunch for 4 people on August 3rd'
+                  value={formData.restaurantNote}
+                  onChange={e => setFormData({ ...formData, restaurantNote: e.target.value })} />
+              </div>
+            </div>
+          )}
+
+          {/* ✅ Safari Tour Fields */}
+          {selectedServices.safari && (
+            <div className='row'>
+              <label className='form-label fw-bold mx-3 mt-3 ms-0 mb-0 text-warning'>Udawalawa Safari Tours</label>
+              <div className='col-md-6'>
+                <label className='form-label'>Safari Tour Packeges</label>
+                <Select
+                  isMulti
+                  options={SafaripackageOptions}
+                  value={formData.safaripackages}
+                  onChange={selectedOptions => setFormData({ ...formData, safaripackages: selectedOptions })}
+                  className='basic-multi-select'
+                  classNamePrefix='select'
+                  required
+                  styles={{
+                    menu: (provided) => ({ ...provided, zIndex: 9999 })
+                  }}
+                />
+              </div>
+              <div className='col-md-3'>
+                <label className='form-label'>Tour Date *</label>
+                <DatePicker
+                  selected={formData.tourDate}
+                  onChange={date => setFormData({ ...formData, tourDate: date })}
+                  className='form-control'
+                  placeholderText='Select date'
+                  minDate={new Date()}
+                  required
+                />
+              </div>
+            </div>
+          )}
+
+          {/* Special Remark */}
+          <div className='col-md-12'>
+            <label className='form-label'>Special Remark</label>
+            <textarea className='form-control' rows='3' value={formData.specialRequests}
+              onChange={e => setFormData({ ...formData, specialRequests: e.target.value })}></textarea>
+          </div>
+
+          {/* Status and Submit */}
+          {loading && (
+            <div className='mt-3 alert alert-info'>Processing your booking... Please wait.</div>
+          )}
+          {!loading && message.text && (
+            <div className={`mt-3 alert ${message.type === 'success' ? 'alert-success' : 'alert-danger'}`}>
+              {message.text}
+            </div>
+          )}
+          <div className='col-md-12'>
+            <button type='submit' className='btn btn-warning text-dark fw-bold' aria-label="Submit booking request">Submit</button>
+          </div>
+        </form>
+
+      </section>
+
+      {/* Visit Us */}
+      <section className="container py-5 my-4 bg-white" itemScope itemType="https://schema.org/PostalAddress">
+        <div className="row align-items-center">
+          <div className="col-md-6 mb-3">
+            <h4 className="fw-bold text-warning-emphasis">Visit Us</h4>
+            <p itemProp="description">Located near Udawalawe National Park, just minutes from adventure and nature.</p>
+            <div itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
+              <meta itemProp="addressLocality" content="Udawalawe"/>
+              <meta itemProp="addressCountry" content="Sri Lanka"/>
+            </div>
+            <a href="https://maps.app.goo.gl/E6x2HycsYbL2pxs16" className="btn btn-outline-primary" aria-label="Open Google Maps directions to Udawalawe Elegarden Hotel">Get Directions</a>
+          </div>
+          <div className="col-md-6">
+            <iframe
+              title="Google Map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d991.1531425375417!2d80.86786452843538!3d6.443766399595056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae425f45c42cc33%3A0xe513b492b06eaa4a!2sElegarden%20Hotel!5e0!3m2!1sen!2slk!4v1746526882578!5m2!1sen!2slk"
+              width="100%"
+              height="250"
+              style={{ border: 0, borderRadius: '10px' }}
+              allowFullScreen
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+      
+      {/* Guest Reviews */}
+      <section className="container bg-light py-5 my-4" style={{width: '100vw'}} itemScope itemType="https://schema.org/Review">
+        <div className="text-center">
+          <h3 className="fw-bold mb-4 text-primary-emphasis" itemProp="name">What Our Guests Say</h3>
+          <Swiper
+            slidesPerView={1}
+            loop={true}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            modules={[Autoplay]}
+          >
+            <SwiperSlide>
+              <blockquote className="blockquote">
+                <p itemProp="reviewBody">"Amazing stay! The staff was incredibly kind and the room was spotless."</p>
+                <footer className="blockquote-footer" itemProp="author" itemScope itemType="https://schema.org/Person">
+                  <span itemProp="name">Emma W.</span> from <span itemProp="nationality">UK</span>
+                </footer>
+              </blockquote>
+            </SwiperSlide>
+            <SwiperSlide>
+              <blockquote className="blockquote">
+                <p itemProp="reviewBody">"Loved the nature around the hotel. Will definitely return!"</p>
+                <footer className="blockquote-footer" itemProp="author" itemScope itemType="https://schema.org/Person">
+                  <span itemProp="name">Saman P.</span> from <span itemProp="nationality">Sri Lanka</span>
+                </footer>
+              </blockquote>
+            </SwiperSlide>
+          </Swiper>
+        </div>
+      </section>
+
+    </main>
+    </>
+  );
+}
+
+export default Home;
+

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /admin/
+Crawl-delay: 5
+Sitemap: https://www.udawalaweelegardenhotelandsafari.com/sitemap.xml
