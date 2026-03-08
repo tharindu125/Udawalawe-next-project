@@ -15,13 +15,23 @@ function SeasonalTours() {
         <>
             <Head>
                 <title>Seasonal Tours | Udawalawe Elegarden Safari Resort - Special Adventures</title>
-                <meta name="description" content="Explore seasonal wildlife tours and special safari packages in Sri Lanka. Unique experiences throughout the year." />
-                <meta name="keywords" content="seasonal safari tours, Sri Lanka seasonal tours, special safari packages, wildlife tours" />
+                <meta name="description" content="Explore Sri Lanka's best seasonal tours — whale watching, Trincomalee beaches, Arugambay surfing, Kumana bird safari, and Adam's Peak pilgrimage." />
+                <meta name="keywords" content="seasonal tours Sri Lanka, whale watching Sri Lanka, Trincomalee beach tour, Arugambay surfing, Kumana bird safari, Adams Peak pilgrimage, Sri Lanka seasonal travel" />
+                <meta name="robots" content="index, follow" />
                 <link rel="canonical" href="https://udawalaweelegardenhotelandsafari.com/SeasonalTours" />
-                
-                <meta property="og:title" content="Seasonal Tours | Udawalawe Elegarden Safari Resort" />
-                <meta property="og:description" content="Experience unique seasonal safari adventures in Sri Lanka." />
+
+                <meta property="og:title" content="Seasonal Tours in Sri Lanka | Udawalawe Elegarden Safari Resort" />
+                <meta property="og:description" content="Discover Sri Lanka's seasonal highlights — whale watching, beach retreats, surfing, bird safaris, and sacred mountain treks." />
+                <meta property="og:image" content="https://udawalaweelegardenhotelandsafari.com/logo.jpg" />
+                <meta property="og:image:alt" content="Seasonal Tours in Sri Lanka" />
                 <meta property="og:url" content="https://udawalaweelegardenhotelandsafari.com/SeasonalTours" />
+                <meta property="og:type" content="website" />
+                <meta property="og:locale" content="en_US" />
+
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Seasonal Tours in Sri Lanka | Udawalawe Elegarden Safari Resort" />
+                <meta name="twitter:description" content="Whale watching, beaches, surfing, bird safaris, and mountain treks — the best of Sri Lanka's seasonal experiences." />
+                <meta name="twitter:image" content="https://udawalaweelegardenhotelandsafari.com/logo.jpg" />
             </Head>
             
             <CustomNavbar />

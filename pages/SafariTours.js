@@ -56,13 +56,39 @@ function SafariTours() {
     <>
       <Head>
         <title>Safari Tours | Udawalawe Elegarden Safari Resort - Wildlife Adventures</title>
-        <meta name="description" content="Experience thrilling Udawalawe safari tours and seasonal adventures. See elephants, leopards, and exotic wildlife in their natural habitat." />
-        <meta name="keywords" content="Udawalawe safari, safari tours Sri Lanka, elephant safari, wildlife tours, Udawalawe National Park safari" />
+        <meta name="description" content="Book Udawalawe safari tours and seasonal wildlife adventures in Sri Lanka. Spot elephants, leopards, and exotic wildlife with our expert guides." />
+        <meta name="keywords" content="Udawalawe safari tours, elephant safari Sri Lanka, jeep safari Udawalawe, wildlife tours Sri Lanka, Udawalawe National Park tour, seasonal tours Sri Lanka" />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://udawalaweelegardenhotelandsafari.com/SafariTours" />
-        
+
         <meta property="og:title" content="Safari Tours | Udawalawe Elegarden Safari Resort" />
-        <meta property="og:description" content="Book your Udawalawe National Park safari adventure today!" />
+        <meta property="og:description" content="Guided Udawalawe National Park safari tours. See elephants, leopards, and exotic wildlife with our experienced local guides." />
+        <meta property="og:image" content="https://udawalaweelegardenhotelandsafari.com/logo.jpg" />
+        <meta property="og:image:alt" content="Safari Tours at Udawalawe National Park" />
         <meta property="og:url" content="https://udawalaweelegardenhotelandsafari.com/SafariTours" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_US" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Safari Tours | Udawalawe Elegarden Safari Resort" />
+        <meta name="twitter:description" content="Guided safari tours in Udawalawe National Park. Spot elephants, leopards, and exotic wildlife in their natural habitat." />
+        <meta name="twitter:image" content="https://udawalaweelegardenhotelandsafari.com/logo.jpg" />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "TouristAttraction",
+            "name": "Udawalawe Safari Tours",
+            "url": "https://udawalaweelegardenhotelandsafari.com/SafariTours",
+            "description": "Guided safari tours through Udawalawe National Park. Spot elephants, leopards, birds, and more in their natural habitat.",
+            "touristType": ["Wildlife Enthusiasts", "Nature Lovers", "Adventure Travelers"],
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Udawalawe",
+              "addressCountry": "LK"
+            }
+          })}
+        </script>
       </Head>
       
       <CustomNavbar />

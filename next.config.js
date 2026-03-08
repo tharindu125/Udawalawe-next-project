@@ -22,17 +22,6 @@ const nextConfig = {
     ];
   },
   
-  // Webpack configuration to handle image imports
-  webpack: (config, { isServer }) => {
-    // Handle image imports
-    config.module.rules.push({
-      test: /\.(jpg|jpeg|png|gif|webp|svg)$/i,
-      type: 'asset/resource',
-    });
-    
-    return config;
-  },
-  
   // Environment variables (optional - can also use .env.local)
   env: {
     // Add any public env variables here

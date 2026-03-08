@@ -16,13 +16,56 @@ function SafariTours() {
         <>
             <Head>
                 <title>Udawalawe Safari Tour Packages | 3Hr, 6Hr, 12Hr Safari Tours</title>
-                <meta name="description" content="Choose from our Normal (3hr), Half Day (6hr), or Full Day (12hr) Udawalawe safari packages. Professional guides and guaranteed wildlife sightings." />
-                <meta name="keywords" content="Udawalawe safari packages, 3 hour safari, half day safari, full day safari, safari tour pricing" />
+                <meta name="description" content="Choose from 3-hour (Rs.12,000), 6-hour (Rs.20,000), or 12-hour (Rs.35,000) Udawalawe safari packages. Expert guides, private jeep, hotel pickup included." />
+                <meta name="keywords" content="Udawalawe safari packages, 3 hour safari Sri Lanka, half day safari Udawalawe, full day safari tour, safari jeep tour price, elephant safari tour" />
+                <meta name="robots" content="index, follow" />
                 <link rel="canonical" href="https://udawalaweelegardenhotelandsafari.com/UdawalaweSafariTours" />
-                
-                <meta property="og:title" content="Udawalawe Safari Tour Packages" />
-                <meta property="og:description" content="Book your Udawalawe safari tour - 3Hr, 6Hr, or 12Hr packages available." />
+
+                <meta property="og:title" content="Udawalawe Safari Tour Packages | 3Hr, 6Hr & 12Hr Tours" />
+                <meta property="og:description" content="Choose your safari: Normal 3Hr (Rs.12,000), Half Day 6Hr (Rs.20,000), or Full Day 12Hr (Rs.35,000). Private jeep, expert guides, hotel pickup included." />
+                <meta property="og:image" content="https://udawalaweelegardenhotelandsafari.com/logo.jpg" />
+                <meta property="og:image:alt" content="Udawalawe Safari Tour Packages" />
                 <meta property="og:url" content="https://udawalaweelegardenhotelandsafari.com/UdawalaweSafariTours" />
+                <meta property="og:type" content="website" />
+                <meta property="og:locale" content="en_US" />
+
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Udawalawe Safari Tour Packages | 3Hr, 6Hr & 12Hr" />
+                <meta name="twitter:description" content="Book a guided Udawalawe safari: 3Hr, 6Hr, or Full Day tours. Private jeep with expert driver. Hotel pickup included." />
+                <meta name="twitter:image" content="https://udawalaweelegardenhotelandsafari.com/logo.jpg" />
+
+                <script type="application/ld+json">
+                  {JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "TouristTrip",
+                    "name": "Udawalawe Safari Tours",
+                    "url": "https://udawalaweelegardenhotelandsafari.com/UdawalaweSafariTours",
+                    "description": "Guided jeep safari tours through Udawalawe National Park with experienced local guides.",
+                    "offers": [
+                      {
+                        "@type": "Offer",
+                        "name": "Normal Safari Tour - 3 Hours",
+                        "price": "12000",
+                        "priceCurrency": "LKR",
+                        "description": "3-hour safari with hotel pickup, water, snacks, and binoculars."
+                      },
+                      {
+                        "@type": "Offer",
+                        "name": "Half Day Safari Tour - 6 Hours",
+                        "price": "20000",
+                        "priceCurrency": "LKR",
+                        "description": "6-hour safari with hotel pickup, optional jungle breakfast, and expert guide."
+                      },
+                      {
+                        "@type": "Offer",
+                        "name": "Full Day Safari Tour - 12 Hours",
+                        "price": "35000",
+                        "priceCurrency": "LKR",
+                        "description": "Full 12-hour safari exploring popular and hidden trails with expert local guide."
+                      }
+                    ]
+                  })}
+                </script>
             </Head>
             
             <CustomNavbar />

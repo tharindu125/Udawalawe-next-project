@@ -25,7 +25,20 @@ export default function Document() {
         
         {/* Theme Color */}
         <meta name="theme-color" content="#febf00" />
-        
+
+        {/* Viewport */}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {/* Default robots */}
+        <meta name="robots" content="index, follow" />
+
+        {/* Site name for Open Graph */}
+        <meta property="og:site_name" content="Udawalawe Elegarden Safari Resort" />
+
+        {/* Geo tags */}
+        <meta name="geo.region" content="LK" />
+        <meta name="geo.placename" content="Udawalawe, Sri Lanka" />
+
         {/* Preload logo */}
         <link rel="preload" as="image" href="/logo.jpg" />
       </Head>

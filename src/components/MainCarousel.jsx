@@ -10,7 +10,7 @@ function MainCarousel() {
     <Carousel fade>
       {/* First Slide */}
       <Carousel.Item>
-        <img className="d-block fullscreen-image" src={slider1} alt="First slide" />
+        <img className="d-block fullscreen-image" src={slider1.src} alt="First slide" />
         <Carousel.Caption className="carousel-caption">
           <div className="container position-relative">
 
@@ -54,7 +54,7 @@ function MainCarousel() {
 
       {/* Second Slide */}
       <Carousel.Item>
-        <img className="d-block w-100 fullscreen-image" src={slider2} alt="Second slide" />
+        <img className="d-block w-100 fullscreen-image" src={slider2.src} alt="Second slide" />
         <Carousel.Caption className="carousel-caption">
           <div className="container position-relative">
             <div className="welcome position-relative" data-aos="fade-down" data-aos-delay="100">
@@ -96,7 +96,7 @@ function MainCarousel() {
 
       {/* Third Slide */}
       <Carousel.Item>
-        <img className="d-block w-100 fullscreen-image" src={slider3} alt="Third slide" />
+        <img className="d-block w-100 fullscreen-image" src={slider3.src} alt="Third slide" />
         <Carousel.Caption className="carousel-caption">
           <div className="container position-relative">
             <div className="welcome position-relative" data-aos="fade-down" data-aos-delay="100">

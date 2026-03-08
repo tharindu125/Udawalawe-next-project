@@ -150,7 +150,7 @@ const images = [
   { id: 53, url: image53, category: "Safari Tours" },
   { id: 54, url: image54, category: "Safari Tours" },
   { id: 55, url: image55, category: "Safari Tours" },
-  { id: 46, url: image56, category: "Safari Tours" },
+  { id: 56, url: image56, category: "Safari Tours" },
   { id: 57, url: image57, category: "Safari Tours" },
   { id: 58, url: image58, category: "Safari Tours" },
   { id: 59, url: image59, category: "Safari Tours" },
@@ -204,13 +204,23 @@ const Gallery = () => {
     <>
       <Head>
         <title>Gallery | Udawalawe Elegarden Safari Resort - Photos & Images</title>
-        <meta name="description" content="Browse our photo gallery showcasing luxury rooms, restaurant, and thrilling safari moments at Udawalawe Elegarden Resort." />
-        <meta name="keywords" content="Udawalawe hotel gallery, Elegarden resort photos, safari images Sri Lanka, hotel rooms gallery" />
+        <meta name="description" content="Browse 85+ photos of Udawalawe Elegarden Safari Resort — luxury rooms, restaurant dining, and thrilling Udawalawe National Park safari moments." />
+        <meta name="keywords" content="Udawalawe hotel gallery, Elegarden resort photos, safari images Sri Lanka, hotel rooms gallery, Udawalawe elephant photos, wildlife photography Sri Lanka" />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://udawalaweelegardenhotelandsafari.com/Gallery" />
-        
+
         <meta property="og:title" content="Gallery | Udawalawe Elegarden Safari Resort" />
-        <meta property="og:description" content="Explore our stunning photo gallery featuring rooms, dining, and safari adventures." />
+        <meta property="og:description" content="Explore 85+ stunning photos featuring our luxury rooms, restaurant dining, and wildlife safari moments at Udawalawe National Park." />
+        <meta property="og:image" content="https://udawalaweelegardenhotelandsafari.com/logo.jpg" />
+        <meta property="og:image:alt" content="Gallery of Udawalawe Elegarden Safari Resort" />
         <meta property="og:url" content="https://udawalaweelegardenhotelandsafari.com/Gallery" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_US" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Gallery | Udawalawe Elegarden Safari Resort" />
+        <meta name="twitter:description" content="85+ photos of luxury rooms, restaurant, and safari wildlife moments at Udawalawe Elegarden Resort." />
+        <meta name="twitter:image" content="https://udawalaweelegardenhotelandsafari.com/logo.jpg" />
       </Head>
       
       <CustomNavbar />

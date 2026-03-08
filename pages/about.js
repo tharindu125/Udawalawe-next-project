@@ -40,13 +40,39 @@ function About() {
      <>
       <Head>
         <title>About Us | Udawalawe Elegarden Safari Resort - Luxury Hotel in Sri Lanka</title>
-        <meta name="description" content="Learn about Udawalawe Elegarden Safari Resort - Your perfect getaway near Udawalawe National Park with luxury accommodations, dining, and safari tours." />
-        <meta name="keywords" content="about Udawalawe hotel, Elegarden resort history, luxury safari resort Sri Lanka, Udawalawe accommodation" />
+        <meta name="description" content="Learn about Udawalawe Elegarden Safari Resort — a nature-inspired luxury hotel near Udawalawe National Park, Sri Lanka. Discover our story, services, and team." />
+        <meta name="keywords" content="about Udawalawe hotel, Elegarden resort, luxury safari resort Sri Lanka, Udawalawe accommodation, hotel amenities Sri Lanka, eco resort Udawalawe" />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://udawalaweelegardenhotelandsafari.com/about" />
-        
+
         <meta property="og:title" content="About Us | Udawalawe Elegarden Safari Resort" />
-        <meta property="og:description" content="Nestled near Udawalawe National Park, our resort offers comfort, charm, and nature for unforgettable stays." />
+        <meta property="og:description" content="Nestled near Udawalawe National Park, our resort blends comfort, charm, and nature for truly unforgettable stays." />
+        <meta property="og:image" content="https://udawalaweelegardenhotelandsafari.com/logo.jpg" />
+        <meta property="og:image:alt" content="About Udawalawe Elegarden Safari Resort" />
         <meta property="og:url" content="https://udawalaweelegardenhotelandsafari.com/about" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_US" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Us | Udawalawe Elegarden Safari Resort" />
+        <meta name="twitter:description" content="Nestled near Udawalawe National Park, our resort blends comfort, charm, and nature for truly unforgettable stays." />
+        <meta name="twitter:image" content="https://udawalaweelegardenhotelandsafari.com/logo.jpg" />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "name": "About Udawalawe Elegarden Safari Resort",
+            "url": "https://udawalaweelegardenhotelandsafari.com/about",
+            "description": "Udawalawe Elegarden Safari Resort is a luxury hotel near Udawalawe National Park, Sri Lanka, offering comfortable rooms, fine dining, and guided safari tours.",
+            "mainEntity": {
+              "@type": "LodgingBusiness",
+              "name": "Udawalawe Elegarden Safari Resort",
+              "telephone": "+94765603802",
+              "url": "https://udawalaweelegardenhotelandsafari.com"
+            }
+          })}
+        </script>
       </Head>
       
       <CustomNavbar />

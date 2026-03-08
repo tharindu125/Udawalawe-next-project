@@ -224,22 +224,27 @@ function Home() {
         <meta name="description" content="Udawalawe Elegarden Safari Resort - Your perfect getaway in Udawalawa, Sri Lanka. Experience luxury, comfort, and nature." />
         <meta name="keywords" content="Udawalawe hotel, Udawalawa safari resort, luxury accommodation Udawalawe, Sri Lanka safari tours, Udawalawe National Park hotels, nature retreat Sri Lanka, wildlife safari Sri Lanka, Safari tours in Sri Lanka, Sri Lanka wildlife safari, Udawalawe safari tour, Elephant safari Sri Lanka, Sri Lanka jeep safari, Safari packages Sri Lanka, Private safari tours Sri Lanka, Wildlife holidays in Sri Lanka, Udawalawe safari" />
         <meta name="author" content="Udawalawe Elegarden Safari Resort" />
-        
+        <meta name="robots" content="index, follow" />
+
         {/* Open Graph / Facebook */}
-        <meta property="og:title" content="Udawalawe Elegarden Safari Resort" />
-        <meta property="og:description" content="Udawalawe Elegarden Safari Resort - Your perfect getaway in Udawalawa, Sri Lanka. Experience luxury, comfort, and nature." />
+        <meta property="og:title" content="Udawalawe Elegarden Safari Resort | Luxury Hotel & Safari Tours in Sri Lanka" />
+        <meta property="og:description" content="Your perfect getaway in Udawalawa, Sri Lanka. Luxury accommodation, fine dining, and guided safari tours near Udawalawe National Park." />
         <meta property="og:image" content="https://udawalaweelegardenhotelandsafari.com/logo.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Udawalawe Elegarden Safari Resort" />
         <meta property="og:url" content="https://udawalaweelegardenhotelandsafari.com/" />
         <meta property="og:type" content="website" />
-        
+        <meta property="og:locale" content="en_US" />
+
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Udawalawe Elegarden Safari Resort" />
-        <meta name="twitter:description" content="Udawalawe Elegarden Safari Resort - Your perfect getaway in Udawalawa, Sri Lanka. Experience luxury, comfort, and nature." />
+        <meta name="twitter:title" content="Udawalawe Elegarden Safari Resort | Luxury Hotel & Safari Tours" />
+        <meta name="twitter:description" content="Your perfect getaway in Udawalawa, Sri Lanka. Luxury rooms, fine dining, and guided safari tours near Udawalawe National Park." />
         <meta name="twitter:image" content="https://udawalaweelegardenhotelandsafari.com/logo.jpg" />
-        
+
         <link rel="canonical" href="https://udawalaweelegardenhotelandsafari.com" />
-        
+
         {/* Structured Data */}
         <script type="application/ld+json">
           {JSON.stringify({
@@ -247,15 +252,30 @@ function Home() {
             "@type": "LodgingBusiness",
             "name": "Udawalawe Elegarden Safari Resort",
             "image": "https://udawalaweelegardenhotelandsafari.com/logo.jpg",
+            "description": "Luxury hotel and safari resort near Udawalawe National Park, Sri Lanka. Offering comfortable rooms, fine dining, and guided wildlife safari tours.",
             "address": {
               "@type": "PostalAddress",
+              "streetAddress": "Udawalawe",
               "addressLocality": "Udawalawe",
-              "addressCountry": "Sri Lanka",
+              "addressRegion": "Southern Province",
+              "addressCountry": "LK",
               "postalCode": "70190"
             },
             "url": "https://udawalaweelegardenhotelandsafari.com/",
-            "telephone": "+94 76 560 3802",
-            "priceRange": "$$"
+            "telephone": "+94765603802",
+            "email": "info@udawalaweelegardenhotelandsafari.com",
+            "priceRange": "$$",
+            "servesCuisine": ["Sri Lankan", "International"],
+            "amenityFeature": [
+              {"@type": "LocationFeatureSpecification", "name": "Free Wi-Fi", "value": true},
+              {"@type": "LocationFeatureSpecification", "name": "Air Conditioning", "value": true},
+              {"@type": "LocationFeatureSpecification", "name": "Free Parking", "value": true},
+              {"@type": "LocationFeatureSpecification", "name": "Room Service", "value": true},
+              {"@type": "LocationFeatureSpecification", "name": "Laundry Service", "value": true}
+            ],
+            "sameAs": [
+              "https://udawalaweelegardenhotelandsafari.com"
+            ]
           })}
         </script>
       </Head>

@@ -113,13 +113,44 @@ function Contact() {
     <>
       <Head>
         <title>Contact Us | Udawalawe Elegarden Safari Resort - Get in Touch</title>
-        <meta name="description" content="Contact Udawalawe Elegarden Safari Resort for bookings, inquiries, and reservations. Phone: +94 76 560 3802 | Email: elegardenudawalawe@gmail.com" />
-        <meta name="keywords" content="contact Udawalawe hotel, book Elegarden resort, Udawalawe hotel contact, safari booking Sri Lanka" />
+        <meta name="description" content="Contact Udawalawe Elegarden Safari Resort for bookings and inquiries. Call +94 76 560 3802 or book online. We're near Udawalawe National Park, Sri Lanka." />
+        <meta name="keywords" content="contact Udawalawe hotel, book Elegarden resort, Udawalawe hotel reservation, safari booking Sri Lanka, Udawalawe hotel phone number" />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://udawalaweelegardenhotelandsafari.com/contact" />
-        
+
         <meta property="og:title" content="Contact Us | Udawalawe Elegarden Safari Resort" />
-        <meta property="og:description" content="Reach out to us for reservations, inquiries, or any assistance — our team is always ready to help." />
+        <meta property="og:description" content="Reach out to us for reservations, inquiries, or any assistance — our team is always ready to make your stay smooth and memorable." />
+        <meta property="og:image" content="https://udawalaweelegardenhotelandsafari.com/logo.jpg" />
+        <meta property="og:image:alt" content="Contact Udawalawe Elegarden Safari Resort" />
         <meta property="og:url" content="https://udawalaweelegardenhotelandsafari.com/contact" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_US" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact Us | Udawalawe Elegarden Safari Resort" />
+        <meta name="twitter:description" content="Reach out to us for reservations, inquiries, or any assistance — our team is always ready to help." />
+        <meta name="twitter:image" content="https://udawalaweelegardenhotelandsafari.com/logo.jpg" />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            "name": "Contact Udawalawe Elegarden Safari Resort",
+            "url": "https://udawalaweelegardenhotelandsafari.com/contact",
+            "mainEntity": {
+              "@type": "LodgingBusiness",
+              "name": "Udawalawe Elegarden Safari Resort",
+              "telephone": "+94765603802",
+              "email": "info@udawalaweelegardenhotelandsafari.com",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Udawalawe",
+                "addressCountry": "LK"
+              },
+              "url": "https://udawalaweelegardenhotelandsafari.com"
+            }
+          })}
+        </script>
       </Head>
       
       <CustomNavbar />
@@ -167,8 +198,7 @@ function Contact() {
                     <div className="contact-info" data-aos="fade-up" data-aos-delay="200">
                       <h5 className='text-primary-emphasis'>Phone:</h5>
                       <div className='d-flex gap-5 mobile_no'>
-                        <p><FaPhone /> +94 123 456 789</p>
-                        <p><FaPhone /> +94 123 456 789</p>
+                        <p><FaPhone /> +94 76 560 3802</p>
                       </div>
                     </div>
 

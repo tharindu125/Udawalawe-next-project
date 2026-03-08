@@ -92,13 +92,52 @@ const RoomsSection = () => {
     <>
       <Head>
         <title>Room Details | Udawalawe Elegarden Safari Resort - Luxury Accommodations</title>
-        <meta name="description" content="Discover our comfortable single, double, and triple rooms with air conditioning, hot water, free Wi-Fi, and complimentary laundry service." />
-        <meta name="keywords" content="Udawalawe hotel rooms, Elegarden accommodation, luxury rooms Sri Lanka, hotel amenities" />
+        <meta name="description" content="Book single, double, or triple rooms at Udawalawe Elegarden Safari Resort. All rooms include AC, hot water, free Wi-Fi, laundry service, and room service." />
+        <meta name="keywords" content="Udawalawe hotel rooms, single room Udawalawe, double room safari hotel, triple room Sri Lanka, Elegarden accommodation, hotel amenities Udawalawe" />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://udawalaweelegardenhotelandsafari.com/RoomDetails" />
-        
+
         <meta property="og:title" content="Room Details | Udawalawe Elegarden Safari Resort" />
-        <meta property="og:description" content="Comfortable rooms with modern amenities and free laundry service." />
+        <meta property="og:description" content="Comfortable single, double, and triple rooms with AC, hot water, free Wi-Fi, and complimentary laundry service near Udawalawe National Park." />
+        <meta property="og:image" content="https://udawalaweelegardenhotelandsafari.com/logo.jpg" />
+        <meta property="og:image:alt" content="Rooms at Udawalawe Elegarden Safari Resort" />
         <meta property="og:url" content="https://udawalaweelegardenhotelandsafari.com/RoomDetails" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_US" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Room Details | Udawalawe Elegarden Safari Resort" />
+        <meta name="twitter:description" content="Single, double, and triple rooms with AC, hot water, free Wi-Fi, and complimentary laundry service." />
+        <meta name="twitter:image" content="https://udawalaweelegardenhotelandsafari.com/logo.jpg" />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LodgingBusiness",
+            "name": "Udawalawe Elegarden Safari Resort",
+            "url": "https://udawalaweelegardenhotelandsafari.com/RoomDetails",
+            "containsPlace": [
+              {
+                "@type": "HotelRoom",
+                "name": "Single Room",
+                "description": "Perfect for solo travelers looking for peace and privacy.",
+                "offers": {"@type": "Offer", "price": "4500", "priceCurrency": "LKR"}
+              },
+              {
+                "@type": "HotelRoom",
+                "name": "Double Room",
+                "description": "Ideal for couples or friends, offering a cozy and spacious atmosphere.",
+                "offers": {"@type": "Offer", "price": "6500", "priceCurrency": "LKR"}
+              },
+              {
+                "@type": "HotelRoom",
+                "name": "Triple Room",
+                "description": "Great for families or small groups, providing enough space and comfort for everyone.",
+                "offers": {"@type": "Offer", "price": "9000", "priceCurrency": "LKR"}
+              }
+            ]
+          })}
+        </script>
       </Head>
       
       <CustomNavbar />

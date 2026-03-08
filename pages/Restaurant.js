@@ -35,7 +35,7 @@ import Avocado from '../src/assets/restaurent_menu/Restaurent-Avocado.jpg';
 import mango from '../src/assets/restaurent_menu/Restaurent-mango.jpg';
 import Wood_Apple from '../src/assets/restaurent_menu/Restaurent-Wood-Apple.jpg';
 import Vanila from '../src/assets/restaurent_menu/Restaurent-Vanila-Ice-Cream.jpg';
-import Chocolate from '../src/assets/restaurent_menu/Restaurent-Vanila-Ice-Cream.jpg';
+import Chocolate from '../src/assets/restaurent_menu/Restaurent-Chocolate-Ice-Cream.jpg';
 import Fruit_Nut from '../src/assets/restaurent_menu/Restaurent-Fruit-and-Nuts-Ice-Cream.jpg';
 import Faluda from '../src/assets/restaurent_menu/Restaurent-Falooda-Ice-Cream.jpg';
 import Mix from '../src/assets/restaurent_menu/Restaurent-Mix-Ice-Cream.jpg'
@@ -395,13 +395,41 @@ const Restaurant = () => {
     <>
       <Head>
         <title>Restaurant Menu | Udawalawe Elegarden Safari Resort - Fine Dining</title>
-        <meta name="description" content="Enjoy delicious local and international cuisine at our restaurant. Fresh brunch, lunch, dinner, beverages, and desserts available." />
-        <meta name="keywords" content="Udawalawe restaurant, Elegarden dining, Sri Lankan cuisine, hotel restaurant menu" />
+        <meta name="description" content="Enjoy authentic Sri Lankan and international cuisine at Udawalawe Elegarden Resort. View our full menu — brunch, lunch, dinner, beverages, and desserts." />
+        <meta name="keywords" content="Udawalawe restaurant, Elegarden dining, Sri Lankan cuisine, hotel restaurant menu, local food Udawalawe, international cuisine Sri Lanka, safari resort restaurant" />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://udawalaweelegardenhotelandsafari.com/Restaurant" />
-        
+
         <meta property="og:title" content="Restaurant Menu | Udawalawe Elegarden Safari Resort" />
-        <meta property="og:description" content="Delicious local and international dishes in a beautiful setting." />
+        <meta property="og:description" content="Authentic Sri Lankan and international dishes freshly prepared with local ingredients. Brunch, lunch, dinner, beverages, and desserts available." />
+        <meta property="og:image" content="https://udawalaweelegardenhotelandsafari.com/logo.jpg" />
+        <meta property="og:image:alt" content="Restaurant at Udawalawe Elegarden Safari Resort" />
         <meta property="og:url" content="https://udawalaweelegardenhotelandsafari.com/Restaurant" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_US" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Restaurant Menu | Udawalawe Elegarden Safari Resort" />
+        <meta name="twitter:description" content="Authentic Sri Lankan and international dishes. Brunch, lunch, dinner, beverages, and desserts — all freshly prepared." />
+        <meta name="twitter:image" content="https://udawalaweelegardenhotelandsafari.com/logo.jpg" />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FoodEstablishment",
+            "name": "Udawalawe Elegarden Resort Restaurant",
+            "url": "https://udawalaweelegardenhotelandsafari.com/Restaurant",
+            "servesCuisine": ["Sri Lankan", "International"],
+            "priceRange": "$$",
+            "telephone": "+94765603802",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Udawalawe",
+              "addressCountry": "LK"
+            },
+            "hasMenu": "https://udawalaweelegardenhotelandsafari.com/Restaurant"
+          })}
+        </script>
       </Head>
       
       <CustomNavbar />
